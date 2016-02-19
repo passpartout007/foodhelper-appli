@@ -1,0 +1,10 @@
+{
+  "name": "food-helper",
+  "app_id": "5e86833d",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://foodhelper.scalingo.io/api"
+    }
+  ]
+}

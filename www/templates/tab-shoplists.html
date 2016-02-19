@@ -1,0 +1,22 @@
+<ion-view view-title="Courses">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-left" ng-repeat="shoplist in shoplists" type="item-text-wrap" href="#/tab/shoplists/{{shoplist._id}}">
+         <i class="icon ion-bag"></i>
+         <h2>{{shoplist.name}}</h2>
+        <span class="badge badge-positive">{{shoplist.recipes.length}}</span>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(shoplist)">
+          Supprimer
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <button class="button button-primary button-block " ng-click="checkForUpdates()">
+    Check for updates
+  </button>
+  <button class="button button-stable button-block button-pulse" ng-if="hasUpdate" ng-click="doUpdate()">
+    download update
+  </button>
+</ion-view>

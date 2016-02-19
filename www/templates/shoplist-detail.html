@@ -1,0 +1,15 @@
+<ion-view view-title="{{shoplist.name}}">
+  <ion-content>
+    <ion-list ng-repeat="recipe in shoplist.recipes">        
+      <a class="item item-icon-left item-icon-right item-positive" href="#/tab/recipes/{{recipe._id}}">
+        <i class="icon ion-fork"></i>
+        {{recipe.name}}
+        <i class="icon ion-eye"></i>
+      </a>
+      <ion-checkbox ng-repeat="ingredient in recipe.ingredients" ng-model="ingredient.ok">
+        {{ingredient.name}}
+        <span class="badge badge-dark">{{ingredient.quantity}}</span>
+      </ion-checkbox>
+    </ion-list>
+  </ion-content>
+</ion-view>

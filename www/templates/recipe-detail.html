@@ -1,0 +1,35 @@
+<ion-view view-title="{{recipe.name}}">
+  <ion-content>
+    <div class="list card">
+	  <div class="item item-balanced">
+	    <h2 class="light">Dernière consommation le {{recipe.boughtDate | date:'dd/MM/yyyy'}}</h2>
+	    <span class="recipe-rating">
+			<i class="icon ion-ios-star-outline" ng-show="recipe.rating < 1"></i>
+			<i class="icon ion-ios-star" ng-show="recipe.rating >= 1"></i>
+			<i class="icon ion-ios-star-outline" ng-show="recipe.rating < 2"></i>
+			<i class="icon ion-ios-star" ng-show="recipe.rating >= 2"></i>
+			<i class="icon ion-ios-star-outline" ng-show="recipe.rating < 3"></i>
+			<i class="icon ion-ios-star" ng-show="recipe.rating >= 3"></i>
+			<i class="icon ion-ios-star-outline" ng-show="recipe.rating < 4"></i>
+			<i class="icon ion-ios-star" ng-show="recipe.rating >= 4"></i>
+			<i class="icon ion-ios-star-outline" ng-show="recipe.rating < 5"></i>
+			<i class="icon ion-ios-star" ng-show="recipe.rating >= 5"></i>
+		</span> 
+	  </div>
+
+	  <div class="item item-body">
+	    <p class="recipe-description" ng-bind-html="recipe.description | nl2br"></p>
+	  </div>
+
+	  <div class="item">
+	  	<ion-list>
+	  		<ion-item ng-repeat="ingredient in recipe.ingredients" ng-model="ingredient.ok">
+		        {{ingredient.name}}
+		        <span class="badge badge-positive">{{ingredient.quantity}}</span>
+		    </ion-item>
+	  	</ion-list>	  	
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>
+
